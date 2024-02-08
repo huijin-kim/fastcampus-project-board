@@ -31,7 +31,6 @@ class JpaRepositoryTest {
     @DisplayName("test")
     @Test
     void givenTestData_whenSelecting_tenWorksFine() {
-
         //given
 
         //when
@@ -43,4 +42,6 @@ class JpaRepositoryTest {
                 .hasSize(123);    // classpath:test/ resources/data.sql 참조
 
     }
+
+    
 }
