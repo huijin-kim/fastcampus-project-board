@@ -25,9 +25,9 @@ import java.util.Set;
         @Index(columnList = "createdBy"),
 })
 
-@EntityListeners(AuditingEntityListener.class)
+
 @Entity
-public class Article {
+public class Article extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,10 +42,7 @@ public class Article {
     @OneToMany(mappedBy =  "article", cascade = CascadeType.ALL)
     private final Set<ArticleComment> articleComment = new LinkedHashSet<>();
 
-    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; //생성일시
-    @CreatedBy @Column(nullable = false, length = 100) private String createdBy; //생성자
-    @LastModifiedDate@Column(nullable = false) private LocalDateTime modifiedAt; //수정일시
-    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; //수정자
+
 
     //모든 JPA 엔티티들은 Hibernate 구현체를 사용하는 경우를 기준으로 기본 생성자를 가지고 있어야한다.
 
