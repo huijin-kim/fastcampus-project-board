@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>게시판 페이지</title>
 </head>
 <body>
 <!--    헤더  -semantic tag사용 -->
-    <header>
-        header 삽입부
-        </hr>
+
+    <header th:replace="~{header :: header}">
     </header>
 
     <main>
@@ -16,7 +15,6 @@
         <form>
 <!--            필터 : 제목, 본문, id, 닉네임, 해시태그-->
             <label for="search-type" hidden>유형 </label>
-            <hr>
             <select id="search-type" name="search-type">
                 <option>제목</option>
                 <option>본문</option>
@@ -84,5 +82,7 @@
     메인 페이지 - 테이블
     푸터
 
+    <footer th:replace="footer :: footer"></footer>
+
 </body>
-</html>
+
