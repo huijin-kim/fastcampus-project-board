@@ -41,7 +41,7 @@ class ArticleControllerTest {
 
 
     //articles/{article-id}
-    @Disabled("구현 중")
+//    @Disabled("구현 중")
     @DisplayName("[view][GET] 게시글 상세 페이지 - 정상호출")
     @Test
     public void givenNothing_whenRequestingArticleView_thenReturnsArticleView() throws Exception {
@@ -52,7 +52,7 @@ class ArticleControllerTest {
         mvc.perform(get("/articles/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
-                .andExpect(view().name("articles/index"))
+                .andExpect(view().name("articles/detail"))
                 .andExpect(model().attributeExists("articleComments"))
                 .andExpect(model().attributeExists("article"));   //맵에 키가 있는지, 존재여부 확인.
     }
